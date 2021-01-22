@@ -1,0 +1,64 @@
+﻿@using WebApplication1.Models;
+@model WebApplication1.Models.DBModel.Cv
+<div class="Create-decision-form">
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-right: 50px;margin-top: 14px;font-size: 28px;">
+        <span aria-hidden="true">×</span>
+    </button>
+    <form id="CreateDecisionForm">
+        <h2 class="text-center">New CV<br></h2>
+        <div class="form-group">
+            <label>
+                <strong>Name</strong>
+                <br>
+            </label>
+            @Html.TextBoxFor(x => x.Name, new { @placeholder = "Name", @id = "Decision-Name", @class = "form-control" })
+            <span asp-validation-for="@Model.Name" />
+        </div>
+        <div class="form-group">
+            <label>
+                <strong>Birthday</strong>
+                <br>
+            </label>
+            <br>
+            @Html.TextBoxFor(x => x.Birthday,
+            new { type = "datetime", @placeholder = "Birthday", @id = "datepicker", @class = "form-control" })
+            <span asp-validation-for="@Model.Birthday" />
+        </div>
+
+        <div class="form-group">
+            <label>
+                <strong>Married</strong>
+                <br>
+            </label>
+            @Html.CheckBoxFor(x => x.Married, new { @id = "Decision-Married", @placeholder = "Married", @rows = "14", @class = "form-control" })
+
+        </div>
+        <div class="form-group">
+            <label>
+                <strong>Phone</strong>
+                <br>
+            </label>
+            <br>
+            @Html.TextBoxFor(x => x.Phone,
+                new { @placeholder = "Phone", @id = "Decision-Phone", @class = "form-control" })
+            <span asp-validation-for="@Model.Phone" />
+        </div>
+        <div class="form-group">
+            <label>
+                <strong>Salary</strong>
+                <br>
+            </label>
+            <br>
+            @Html.TextBoxFor(x => x.Salary,
+                new { type = "number" , @placeholder = "Salary", @id = "Decision-Salary", @class = "form-control" })
+            <span asp-validation-for="@Model.Salary" />
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" id="CreateDecisionForm-submit" type="submit">Submit</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
