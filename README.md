@@ -10,3 +10,8 @@
 1.4 Create local database from EPlast.DataAccess migrations or from backup file
 
 1.5 Restore client-side libraries by libman
+
+# Also
+
+For sort table just click to col name
+For edit\delete row right click on it
