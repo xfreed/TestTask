@@ -14,4 +14,5 @@
 # Also
 
 For sort table just click to col name
+
 For edit\delete row right click on it
